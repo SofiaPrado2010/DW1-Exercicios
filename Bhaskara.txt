@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bhaskara</h1>
+    <label for="inputA">A</label>
+    <input type="number" id="inputA">
+    <br><br>
+    <label for="inputB">B</label>
+    <input type="number" id="inputB">
+    <br><br>
+    <label for="inputC">C</label>
+    <input type="number" id="inputC">
+    <br><br>
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <br><br>
+    <label for="x1">X1 = </label>
+    <span id="x1">...</span>
+    <br><br>
+    <label for="x2">X2 = </label>
+    <span id="x2">...</span>
+
+    <script>
+        function Calcular(){
+            let a = parseFloat(document.getElementById("inputA").value);
+            let b = parseFloat(document.getElementById("inputB").value);
+            let c = parseFloat(document.getElementById("inputC").value);
+            
+            let delta = b**2-4*a*c;
+            let x1 = (-b + Math.sqrt(delta))/2*a;
+            let x2 = (-b - Math.sqrt(delta))/2*a;
+
+            document.getElementById("x1").innerHTML = x1;
+            document.getElementById("x2").innerHTML = x2;
+        }
+    </script>
+</body>
+</html>
