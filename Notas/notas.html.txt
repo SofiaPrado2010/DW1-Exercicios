@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <link rel="stylesheet" href="notas.css">
+</head>
+<body>
+
+    <header>
+        Calculador de Média
+    </header>
+
+    <main>
+        <section>
+            <h1>Calculadora de média</h1>
+
+            <label for="inputRA">RA</label>
+            <input type="number" id="inputRA">
+            <br><br>
+            <label for="inputNome">Nome</label>
+            <input type="text" id="inputNome">
+            <br><br>
+            <label for="inputN1">Nota 1</label>
+            <input type="number" id="inputN1">
+            <br><br>
+            <label for="inputN2">Nota 2</label>
+            <input type="number" id="inputN2">
+            <br><br>
+            <label for="inputN3">Nota 3</label>
+            <input type="number" id="inputN3">
+            <br><br>
+            <label for="inputN4">Nota 4</label>
+            <input type="number" id="inputN4">
+            <br><br>
+            <label for="inputME">Média de exercícios</label>
+            <input type="number" id="inputME">
+            <br><br>
+            
+            <button onclick="Calcular()">Calcular</button>
+
+            <div class="resultado">
+                <p><strong>Resposta: </strong><span id="resposta">...</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <span id="mensagem">Preencha os espaços e calcule</span>
+    </footer>
+
+    <script src="notas.js"></script>
+</body>
+</html>
