@@ -10,7 +10,7 @@ function Calcular(){
     if(isNaN(horas)){
         footer.classList.add("erro");
         mensagem.innerHTML = "As quantidade de horas deve ser informada";
-        document.getElementById("resposta").innerHTML = "-";
+        document.getElementById("resultado").innerHTML = "-";
         return;
     }else{
         footer.classList.remove("erro");
