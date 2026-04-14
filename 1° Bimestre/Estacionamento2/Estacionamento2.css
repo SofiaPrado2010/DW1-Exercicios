@@ -1,0 +1,127 @@
+:root {
+    --verde-água: #35d0cb;
+    --azul-escuro: hsl(222, 57%, 53%);
+    --azul-marinho: hsl(222, 62%, 39%);
+    --vermelho: hsl(343, 100%, 59%);
+    --branco: #ffffff;
+    --cinza: #cff4f2;
+    --preto: #000000;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f5f7;
+}
+
+/* HEADER */
+header {
+    background-color: var(--azul-escuro);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* CENTRALIZA */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* CAIXA */
+section {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+/* TÍTULO */
+h1 {
+    text-align: center;
+    color: var(--azul-escuro);
+}
+
+/* LABEL */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--azul-marinho);
+}
+
+/* CHECKBOX (corrigido) */
+input[type="checkbox"] {
+    width: auto;
+    margin-left: 5px;
+    transform: scale(1.2);
+    accent-color: var(--verde-água);
+}
+
+input[type="datetime-local"]{
+     width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #1c4fa2;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+
+/* BOTÃO */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--verde-água);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #3810c8;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+footer.erro {
+    background-color: var(--vermelho);
+    color: white;
+}
+
+.resultado {
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* TEXTO RESULTADO */
+#resultado {
+    font-weight: bold;
+    color: var(--azul-escuro);
+}
