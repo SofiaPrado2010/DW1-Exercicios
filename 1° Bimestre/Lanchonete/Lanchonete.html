@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanchonete</title>
+    <link rel="stylesheet" href="lanchonete.css">
+</head>
+<body>
+
+    <header>
+        Cardápio
+    </header>
+
+    <main>
+        <section>
+            <h1>Dogão</h1>
+            
+            <table>
+                <tr>
+                    <th>Opções</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                </tr>
+                
+                <tr>
+                    <td>Cachorro quente básico</td>
+                    <td>R$ 22,00</td>
+                    <td><input type="number" id="inputCQBasico" onkeydown="return event.key !== 'e'"></td>
+                </tr>
+                
+                <tr>
+                    <td>Cachorro quente duplo</td>
+                    <td>R$ 26,00</td>
+                    <td><input type="number" id="inputCQDuplo" onkeydown="return event.key !== 'e'"></td>
+                </tr>
+                
+                <tr>
+                    <td>X-Salada</td>
+                    <td>R$ 29,00</td>
+                    <td><input type="number" id="inputXS" onkeydown="return event.key !== 'e'"></td>
+                </tr>
+                
+                <tr>
+                    <td>Refrigerante 350mL</td>
+                    <td>R$ 5,00</td>
+                    <td><input type="number" id="inputRefri" onkeydown="return event.key !== 'e'"></td>
+                </tr>
+                <tr>
+                    <td>Refrigerante 1L</td>
+                    <td>R$ 8,00</td>
+                    <td><input type="number" id="inputR1" onkeydown="return event.key !== 'e'"></td>
+                </tr>
+            </table>
+
+            <br>
+
+            <button onclick="Calcular()">Total</button>
+
+            <div class="total">
+                <p><strong>Total: </strong><span id="total">...</span></p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer">
+        <span id="mensagem">Adquira os produtos e calcule o total</span>
+    </footer>
+
+    <script src="lanchonete.js"></script>
+</body>
+</html>
