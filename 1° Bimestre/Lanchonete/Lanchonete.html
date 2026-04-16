@@ -26,30 +26,30 @@
                 <tr>
                     <td>Cachorro quente básico</td>
                     <td>R$ 22,00</td>
-                    <td><input type="number" id="inputCQBasico" onkeydown="return event.key !== 'e'"></td>
+                    <td><input type="number" id="inputCQBasico" onkeydown="return !['e', 'E', '+', '-'].includes(event.key)"></td>
                 </tr>
                 
                 <tr>
                     <td>Cachorro quente duplo</td>
                     <td>R$ 26,00</td>
-                    <td><input type="number" id="inputCQDuplo" onkeydown="return event.key !== 'e'"></td>
+                    <td><input type="number" id="inputCQDuplo" onkeydown="return !['e', 'E', '+', '-'].includes(event.key)"></td>
                 </tr>
                 
                 <tr>
                     <td>X-Salada</td>
                     <td>R$ 29,00</td>
-                    <td><input type="number" id="inputXS" onkeydown="return event.key !== 'e'"></td>
+                    <td><input type="number" id="inputXS" onkeydown="return !['e', 'E', '+', '-'].includes(event.key)"></td>
                 </tr>
                 
                 <tr>
                     <td>Refrigerante 350mL</td>
                     <td>R$ 5,00</td>
-                    <td><input type="number" id="inputRefri" onkeydown="return event.key !== 'e'"></td>
+                    <td><input type="number" id="inputRefri" onkeydown="return !['e', 'E', '+', '-'].includes(event.key)"></td>
                 </tr>
                 <tr>
                     <td>Refrigerante 1L</td>
                     <td>R$ 8,00</td>
-                    <td><input type="number" id="inputR1" onkeydown="return event.key !== 'e'"></td>
+                    <td><input type="number" id="inputR1" onkeydown="return !['e', 'E', '+', '-'].includes(event.key)"></td>
                 </tr>
             </table>
 
