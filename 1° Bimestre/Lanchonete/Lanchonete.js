@@ -14,7 +14,9 @@ function Calcular(){
         mensagem.innerHTML = "As quantidades não podem ser negativas";
         document.getElementById("total").innerHTML = "-";
         return;
-    }if(!Number.isInteger(cqbasico) || !Number.isInteger(cqduplo) || !Number.isInteger(xs) || !Number.isInteger(refri) ||
+    }
+    
+    if(!Number.isInteger(cqbasico) || !Number.isInteger(cqduplo) || !Number.isInteger(xs) || !Number.isInteger(refri) ||
     !Number.isInteger(r1)){
         footer.classList.add("erro");
         mensagem.innerHTML = "Digite apenas números inteiros (sem decimais)";
