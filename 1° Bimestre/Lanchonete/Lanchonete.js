@@ -1,9 +1,9 @@
 function Calcular(){
-    let cqbasico = parseInt(document.getElementById("inputCQBasico").value)|| 0;
-    let cqduplo = parseInt(document.getElementById("inputCQDuplo").value)|| 0;
-    let xs = parseInt(document.getElementById("inputXS").value)|| 0;
-    let refri = parseInt(document.getElementById("inputRefri").value)|| 0;
-    let r1 = parseInt(document.getElementById("inputR1").value)|| 0;
+    let cqbasico = parseFloat(document.getElementById("inputCQBasico").value)|| 0;
+    let cqduplo = parseFloat(document.getElementById("inputCQDuplo").value)|| 0;
+    let xs = parseFloat(document.getElementById("inputXS").value)|| 0;
+    let refri = parseFloat(document.getElementById("inputRefri").value)|| 0;
+    let r1 = parseFloat(document.getElementById("inputR1").value)|| 0;
 
     let footer = document.getElementById("footer");
     let mensagem  = document.getElementById("mensagem");
@@ -12,6 +12,12 @@ function Calcular(){
     if(cqbasico < 0 || cqduplo < 0 || xs < 0 || refri < 0 || r1 < 0){
         footer.classList.add("erro");
         mensagem.innerHTML = "As quantidades não podem ser negativas";
+        document.getElementById("total").innerHTML = "-";
+        return;
+    }if(!Number.isInteger(cqbasico) || !Number.isInteger(cqduplo) || !Number.isInteger(xs) || !Number.isInteger(refri) ||
+    !Number.isInteger(r1)){
+        footer.classList.add("erro");
+        mensagem.innerHTML = "Digite apenas números inteiros (sem decimais)";
         document.getElementById("total").innerHTML = "-";
         return;
     }
