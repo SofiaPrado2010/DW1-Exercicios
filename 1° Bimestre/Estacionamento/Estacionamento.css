@@ -1,9 +1,9 @@
 :root {
-    --azul: #3fd1fd;
-    --azul-escuro: hsl(222, 95%, 65%);
+    --bege-escuro: #a08560;
+    --marrom: hsl(40, 19%, 44%);
     --vermelho: hsl(343, 100%, 59%);
     --branco: #ffffff;
-    --cinza: #ddebf1;
+    --cinza: #cbcbcb;
     --preto: #000000;
 }
 
@@ -11,12 +11,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c3f0ff;
+    background-image: url(Estacionamento.jpeg);
 }
 
 /* HEADER */
 header {
-    background-color: var(--azul);
+    background-color: var(--bege-escuro);
     color: white;
     text-align: center;
     padding: 15px;
@@ -44,7 +44,7 @@ section {
 /* TÍTULO */
 h1 {
     text-align: center;
-    color: var(--azul-escuro);
+    color: var(--marrom);
 }
 
 /* LABEL */
@@ -60,7 +60,7 @@ input[type="number"] {
     padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
-    border: 1px solid #7af2f8;
+    border: 1px solid #b5b2ad;
     outline: none;
     transition: 0.3s;
     box-sizing: border-box;
@@ -71,12 +71,13 @@ input[type="checkbox"] {
     width: auto;
     margin-left: 5px;
     transform: scale(1.2);
+    accent-color: var(--bege-escuro);
 }
 
 /* FOCO */
 input[type="number"]:focus {
-    background-color: var(--azul);
-    border-color: var(--azul);
+    background-color: var(--bege-escuro);
+    border-color: var(--bege-escuro);
 }
 
 /* BOTÃO */
@@ -84,7 +85,7 @@ button {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
-    background-color: var(--azul-escuro);
+    background-color: var(--marrom);
     color: white;
     border: none;
     border-radius: 20px;
@@ -94,7 +95,7 @@ button {
 }
 
 button:hover {
-    background-color: #3810c8;
+    background-color: #5d5541;
 }
 
 footer {
@@ -102,7 +103,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--azul);
+    background-color: var(--bege-escuro);
     color: black;
     font-weight: bold;
     transition: 0.3s;
@@ -126,5 +127,5 @@ footer.erro {
 /* TEXTO RESULTADO */
 #resultado {
     font-weight: bold;
-    color: var(--azul-escuro);
+    color: var(--marrom);
 }
