@@ -4,5 +4,5 @@ if(localStorage.getItem("logado") !== "true") {
 
 function sair() {
     localStorage.removeItem("logado");
-    window.location.href = "Login.html";
+    window.close(); 
 }

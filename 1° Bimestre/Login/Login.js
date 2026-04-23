@@ -2,11 +2,12 @@ function entrar(){
     let user = document.getElementById("usuario").value;
     let senha = document.getElementById("senha").value;
 
-    if(user === "admin" && senha === "123") {
+    if(user === "Admin" && senha === "1234") {
         localStorage.setItem("logado", "true");
 
-        window.location.href = "Menu.html";
+        window.open("Menu.html", "_blank"); 
     } else {
-        alert("Login inválido!");
+        footer.classList.add("erro");
+        mensagem.innerHTML = "Senha ou usuário invalidos";
     }
 }
