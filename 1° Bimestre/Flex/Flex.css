@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: black;
+    font-family: sans-serif;
+    color: white;
+}
+
+.linha {
+    display: flex;
+    flex: 1;
+}
+
+.linha1 .coluna {
+    flex: 1;
+}
+
+.linha2 .coluna {
+    flex: 1;
+}
+
+.linha3 .coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.linha3 .coluna:not(:last-child) {
+    display: block;
+}
+
+.linha3 .coluna .subcoluna {
+    flex: 1;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.linha4 .coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha4 .coluna:nth-child(1) {
+    flex-direction: row;
+}
+
+.linha4 .coluna .subcoluna {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Cores para visualização */
+.linha1 .coluna:nth-child(1) {
+    background: crimson;
+    flex-direction: column;
+}
+
+.linha1 .coluna:nth-child(2) {
+    background: darkorange;
+}
+
+.linha2 .coluna:nth-child(1) {
+    background: navy;
+}
+
+.linha2 .coluna:nth-child(2) {
+    background: mediumslateblue;
+}
+
+.linha3 .coluna:nth-child(1) {
+    background: rgb(235, 42, 210);
+}
+
+.linha3 .coluna:nth-child(2) {
+    background: rgb(104, 238, 227);
+}
+
+.linha3 .coluna:nth-child(2) .subcoluna:nth-child(1) {
+    background: #d865f8;
+}
+
+.linha3 .coluna:nth-child(2) .subcoluna:nth-child(2) {
+    background: #ffe46b;
+}
+
+.linha3 .coluna:nth-child(2) .subcoluna:nth-child(3) {
+    background: #2fe090;
+}
+
+.linha4 .coluna:nth-child(1) {
+    background: rgb(141, 241, 184);
+}
+
+.linha4 .coluna:nth-child(1) .subcoluna:nth-child(1){
+    background:rgb(49, 207, 120);
+}
+
+.linha4 .coluna:nth-child(1) .subcoluna:nth-child(2) {
+    background: #30c2e2;
+}
+
+
+.linha4 .coluna:nth-child(2) {
+    background: darkseagreen;
+}
+
+.linha4 .coluna:nth-child(2) .subcoluna:nth-child(1) {
+    background: #b14ee6;
+}
+
+.linha4 .coluna:nth-child(2) .subcoluna:nth-child(2) {
+    background: #fd6fce;
+}
+
+
+/* Para mostrar o nome das divisões */
+.coluna,
+.subcoluna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid white;
+}
