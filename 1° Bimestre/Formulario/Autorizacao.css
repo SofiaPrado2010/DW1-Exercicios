@@ -1,84 +1,113 @@
-:root {
-    --azul: #3fd1fd;
-    --azul-escuro: hsl(222, 95%, 65%);
-    --vermelho: hsl(343, 100%, 59%);
-    --branco: #ffffff;
-    --cinza: #ddebf1;
-    --preto: #000000;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e0e0e0;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 0;
-    background-color:var(--cinza);
-}
-
-/* HEADER */
-header {
-    background-color: var(--azul);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-weight: bold;
-}
-
-/* CENTRALIZA TUDO */
-main {
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
+}
+
+/* seu container */
+#container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 80vh;
-}
-
-/* CAIXA */
-section {
-    background: var(--cinza);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 350px;
-}
-
-/* TÍTULO */
-h1 {
-    text-align: center;
-    color: var(--azul-escuro);
-}
-
-/* BOTÃO */
-button {
     width: 100%;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: var(--azul-escuro);
+}
+
+/* sua "folha" */
+#autorizacao {
+    background-color: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+/* header já existe no seu HTML */
+#autorizacao header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* texto */
+#documento p {
+    text-align: justify;
+    line-height: 2;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* seus <strong> substituem essas classes */
+strong {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* footer */
+#footer {
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* linha de assinatura */
+#documento p:last-of-type {
+    margin-top: 40px;
+}
+
+/* BOTÕES (adaptado porque você não usa .acoes) */
+#container button {
+    margin-top: 30px;
+    margin-right: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px 20px;
+    background-color: #7f8c8d;
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #3810c8;
-}
-
-/* FOOTER */
-footer {
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--azul);
-    color: black;
-    font-weight: bold;
     transition: 0.3s;
-    text-align: center;
-    padding: 10px;
 }
 
-/* ERRO */
-footer.erro {
-    background-color: var(--vermelho);
-    color: white;
+#container button:hover {
+    background-color: #34495e;
+}
+
+/* botão imprimir (segundo botão) */
+#container button:last-of-type {
+    background-color: #27ae60;
+}
+
+#container button:last-of-type:hover {
+    background-color: #1e8449;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* impressão */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+
+    #autorizacao {
+        box-shadow: none;
+        border: none;
+        padding: 20px;
+    }
+
+    #container button {
+        display: none;
+    }
 }

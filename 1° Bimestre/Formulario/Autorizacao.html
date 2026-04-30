@@ -6,47 +6,51 @@
     <link rel="stylesheet" href="Autorizacao.css">
 </head>
 <body>
-    <header>
-        AUTORIZAÇÃO DE VIAGEM ESPORTIVA
-    </header>
-    
-    <main>
-        <section id="documento">
-            <h1>Autorização</h1>
-            <p>
-                Eu, <strong id="resResponsavel"></strong>, assumo a responsabilidade e AUTORIZO o(a) atleta 
-                <strong id="resNome"></strong>, portador(a) do CPF 
-                <strong id="resCpf"></strong>, com 
-                <strong id="resIdade"></strong> anos de idade, a realizar a viagem da cidade de 
-                <strong id="resOrigem"></strong> para a cidade de 
-                <strong id="resDestino"></strong>.
-            </p>
-
-            <p>
-                A referida viagem tem como finalidade a participação no torneio juvenil, onde o(a) atleta competirá na modalidade 
-                <strong id="resModalidade"></strong>, enquadrando-se na categoria 
-                <strong id="resCategoria"></strong>.
-            </p>
-
-            <p>
-                Declaro estar ciente das regras do torneio e autorizo sua participação.
-            </p>
+    <article id="container">
+        <div id="autorizacao">
+            <header>
+                AUTORIZAÇÃO DE VIAGEM ESPORTIVA
+            </header>
             
-            <br><br>
-            
-            <p>______________________________________</p>
-            <p>Assinatura do(a) Responsável</p>
+            <section id="documento">
+                <p>
+                    Eu, <strong id="resResponsavel"></strong>, assumo a responsabilidade e AUTORIZO o(a) atleta 
+                    <strong id="resNome"></strong>, portador(a) do CPF 
+                    <strong id="resCpf"></strong>, com 
+                    <strong id="resIdade"></strong> anos de idade, a realizar a viagem da cidade de 
+                    <strong id="resOrigem"></strong> para a cidade de 
+                    <strong id="resDestino"></strong>.
+                </p>
 
-            <br>
+                <p>
+                    A referida viagem tem como finalidade a participação no torneio juvenil, onde o(a) atleta competirá na modalidade 
+                    <strong id="resModalidade"></strong>, enquadrando-se na categoria 
+                    <strong id="resCategoria"></strong>.
+                </p>
+                
+                <p>
+                    Declaro estar ciente das regras do torneio e autorizo sua participação.
+                </p>
+                
+                <br><br>
+            
+                <p>______________________________________</p>
+                <p>Assinatura do(a) Responsável</p>
+
+            </section>
+            
+            <footer id="footer">
+                <span id="mensagem">Assinatura do responsável</span>
+            </footer>
+        </div>
         
+        <div class="botoes">
             <button onclick="voltar()">Voltar</button>
             <button onclick="window.print()">Imprimir</button>
-        </section>
-    </main>
+        </div>
+
+    </article>
     
-    <footer id="footer">
-        <span id="mensagem">Autorização Concluída</span>
-    </footer>
     
     <script src="Autorizacao.js"></script>
 </body>

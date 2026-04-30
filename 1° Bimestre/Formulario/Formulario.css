@@ -1,9 +1,9 @@
 :root {
-    --azul: #3fd1fd;
-    --azul-escuro: hsl(222, 95%, 65%);
+    --azul: #95cedf;
+    --azul-escuro: hsl(222, 44%, 49%);
     --vermelho: hsl(343, 100%, 59%);
     --branco: #ffffff;
-    --cinza: #ddebf1;
+    --cinza: #e6eff2;
     --preto: #000000;
 }
 
@@ -11,7 +11,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--cinza);
+    background-image: url(Formulario.jpeg);
+    background-size: 600px;
 }
 
 /* HEADER */
@@ -59,7 +60,7 @@ input {
     padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
-    border: 1px solid #7af2f8;
+    border: 1px solid #c1d2d7;
     outline: none;
     transition: 0.3s;
     box-sizing: border-box;
@@ -70,7 +71,7 @@ select {
     padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
-    border: 1px solid #7af2f8;
+    border: 1px solid #c1d2d7;
     outline: none;
     transition: 0.3s;
     box-sizing: border-box;
@@ -91,13 +92,13 @@ button {
     background-color: var(--azul-escuro);
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
 }
 
 button:hover {
-    background-color: #3810c8;
+    background-color: #36377e;
 }
 
 /* FOOTER */
