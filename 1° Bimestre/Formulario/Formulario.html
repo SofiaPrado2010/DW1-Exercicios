@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="Formulario.css">
+</head>
+<body>
+
+    <header>
+      Formulario para Viagem
+    </header>
+    
+    <main>
+        <section>
+            <h1>Formulário</h1>
+
+            <label for="inputCPF">CPF</label>
+            <input type="text" id="inputCPF" placeholder="Digite seu CPF">
+            <br><br>
+
+            <label for="inputNome">Nome</label>
+            <input type="text" id="inputNome" placeholder="Digite seu nome completo">
+            <br><br>
+
+            <label for="inputIdade">Idade</label>
+            <input type="number" id="inputIdade" placeholder="Digite sua idade">
+            <br><br>
+
+            <label for="inputResponsavel">Nome do responsavel</label>
+            <input type="text" id="inputResponsavel" placeholder="Digite o nome do responsável">
+            <br><br>
+
+            <label for="inputOrigem">Cidade de origem</label>
+            <input type="text" id="inputOrigem" placeholder="Digite sua cidade de origem">
+            <br><br>
+
+            <label for="inputDestino">Cidade de destino</label>
+            <input type="text" id="inputDestino" placeholder="Digite a cidade de destino">
+            <br><br>
+
+            <label for="modalidade">Modalidade Esportiva</label>
+            <select id="modalidade">
+                <option value="">-- Selecione uma opção --</option>
+                <option value="volei">Vôlei</option>
+                <option value="futebol">Futebol</option>
+                <option value="natacao">Natação</option>
+            </select>
+            <br><br>
+
+            <button type="button" onclick="Validar()">Concluir</button>
+
+        </section>
+    </main>
+
+    <footer id="footer">
+        <span id="mensagem">Preencha os espaços para emitir a autorização</span>
+    </footer>
+
+    <script src="Formulario.js"></script>
+
+</body>
+</html>

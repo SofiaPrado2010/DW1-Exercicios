@@ -1,0 +1,84 @@
+:root {
+    --azul: #3fd1fd;
+    --azul-escuro: hsl(222, 95%, 65%);
+    --vermelho: hsl(343, 100%, 59%);
+    --branco: #ffffff;
+    --cinza: #ddebf1;
+    --preto: #000000;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:var(--cinza);
+}
+
+/* HEADER */
+header {
+    background-color: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* CENTRALIZA TUDO */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* CAIXA */
+section {
+    background: var(--cinza);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+/* TÍTULO */
+h1 {
+    text-align: center;
+    color: var(--azul-escuro);
+}
+
+/* BOTÃO */
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--azul-escuro);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #3810c8;
+}
+
+/* FOOTER */
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul);
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ERRO */
+footer.erro {
+    background-color: var(--vermelho);
+    color: white;
+}
