@@ -7,7 +7,7 @@ body {
     justify-content: center;
 }
 
-/* seu container */
+
 #container {
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ body {
     width: 100%;
 }
 
-/* sua "folha" */
+
 #autorizacao {
     background-color: #fff;
     width: 100%;
@@ -25,7 +25,6 @@ body {
     border: 1px solid #ccc;
 }
 
-/* header já existe no seu HTML */
 #autorizacao header {
     text-align: center;
     margin-bottom: 50px;
@@ -35,7 +34,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* texto */
 #documento p {
     text-align: justify;
     line-height: 2;
@@ -43,13 +41,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* seus <strong> substituem essas classes */
 strong {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* footer */
+
 #footer {
     margin-top: 80px;
     text-align: center;
@@ -60,7 +57,7 @@ strong {
     margin-top: 40px;
 }
 
-/* BOTÕES (adaptado porque você não usa .acoes) */
+/* BOTÕES */
 #container button {
     margin-top: 30px;
     margin-right: 10px;
