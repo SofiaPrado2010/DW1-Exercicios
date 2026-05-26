@@ -96,7 +96,7 @@ app.post('/enviar-dados-cliente', upload.single('foto'), function (req, res) {
                 erro: 'O peso e a altura devem ser numéricos.'
             });
         }
-        const imc = peso / altura**2;
+        const imc = peso / (altura**2);
         let classificacao = '';
         if (imc < 16) {
             classificacao = 'Magreza grave';
@@ -106,7 +106,7 @@ app.post('/enviar-dados-cliente', upload.single('foto'), function (req, res) {
             classificacao = 'Magreza leve';
         } else if(imc <= 24.9){
             classificacao = 'Saudável';
-        } else if(imc <= 29,9){
+        } else if(imc <= 29.9){
             classificacao = 'Sobrepeso';
         } else if(imc <= 34.9){
             classificacao ='Obesidade Grau I';

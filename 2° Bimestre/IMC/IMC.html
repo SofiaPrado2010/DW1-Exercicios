@@ -124,7 +124,11 @@
 
                 // Define a classe de sucesso (Verde) e atualiza o texto permanentemente
                 respostaDiv.className = "resposta sucesso";
-                respostaDiv.innerHTML = `<b>${data.mensagem}</b><br>Cliente: ${nome} (CPF: ${cpf})<br>Peso: ${peso}<br>Altura: ${altura}<br>IMC: ${(peso / altura**2).toFixed(2)}<br>${data.nomeArquivo ? 'Foto salva como: ' + data.nomeArquivo : 'Nenhuma foto enviada'}`;
+                respostaDiv.innerHTML = `<b>${data.mensagem}</b><br>Cliente: ${nome} (CPF: ${cpf})<br>
+                Peso: ${peso}<br>Altura: ${altura}<br>
+                IMC: ${(peso / (altura**2)).toFixed(2)}<br>
+                Classificação: ${data.cliente.classificacao}<br>
+                ${data.nomeArquivo ? 'Foto salva como: ' + data.nomeArquivo : 'Nenhuma foto enviada'}`;
 
             
             } catch (error) {
