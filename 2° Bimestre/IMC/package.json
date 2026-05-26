@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "module": "^2.0.0",
+    "multer": "^2.1.1"
+  }
+}
