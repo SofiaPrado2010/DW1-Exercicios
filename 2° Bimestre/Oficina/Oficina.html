@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Imagem e Mensagens</title>
+    <link rel="stylesheet" href="Oficina.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- <h1>Configurações de Conexão</h1> -->
+        <!-- <label for="enderecoServidorInput">Endereço do Servidor:</label>
+        <input type="text" id="enderecoServidorInput" placeholder="Digite o endereço do servidor" value="localhost">
+        
+        <label for="inputPorta">Porta:</label>
+        <input type="text" id="inputPorta" placeholder="Digite a porta" value="3000">
+        
+        <hr> -->
+        <form id="formCliente" method="post" action="/enviar-dados">
+            <h2>Formulário com dados do cliente</h2>
+
+            <label for="inputPeca"> Nome da peça:</label>
+            <input type="text" id="inputPeca" name="peca" placeholder="Digite o nome da peça">
+
+            <button type="button" onclick="enviarDadosCliente()">Enviar Dados</button>
+
+        </form>
+
+        <h3>Resposta do servidor</h3>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+    // --- FUNÇÃO PARA ENVIAR DADOS COMPLETOS DO ALUNO ---
+        async function enviarDadosCliente() {
+            const enderecoServidor = 'localhost';
+            const porta = '3000';
+
+            // Coletando os dados do formulário
+            const peca = document.getElementById('inputPeca').value;
+            const resposta = document.getElementById('resposta');
+
+            // Validação dos campos
+            if (!peca) {
+                resposta.className = "resposta aviso";
+                resposta.innerHTML = "Por favor, informe o nome da peça!";
+                return;
+            }
+
+            // Preparando os dados para enviar
+            // o formData é uma estrutura que facilita o envio de dados, incluindo arquivos, em requisições HTTP POST
+            // analogia, formData é uma mala onde podemos colocar vários itens (dados do aluno e a foto) e enviar tudo de uma vez para o servidor
+            const formData = new FormData();
+
+            formData.append('peca', peca);
+
+            try {
+                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-dados`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        peca: peca
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Falha na resposta do servidor');
+                }
+
+                const data = await response.json();
+
+                // Define a classe de sucesso (Verde) e atualiza o texto permanentemente
+                resposta.className = "resposta sucesso";
+                resposta.innerHTML = `<b>${data.mensagem}</b><br>Nome da peça: ${peca}<br>
+                Resposta: ${data.cliente.resposta}<br>`;
+
+
+            } catch (error) {
+                console.error('Erro:', error);
+                // Define a classe de erro (Vermelho)
+                resposta.className = "resposta erro";
+                resposta.innerHTML = "Erro de comunicação: Não foi possível salvar os dados do cliente no servidor.";
+            }
+        }
+    </script>
+</body>
+
+</html>
