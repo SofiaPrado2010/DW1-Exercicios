@@ -3,7 +3,7 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fafafa;
+    background-image:url(imagem.jpg);
 }
 
 .container {
@@ -11,12 +11,12 @@ body {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #ffffff76;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 h1 {
-    color: #cc0000; /* Vermelho Chapeuzinho */
+    color: #000000; /* Vermelho Chapeuzinho */
     text-align: center;
 }
 
@@ -53,7 +53,7 @@ input[type="text"]:focus {
 button {
     padding: 10px 20px;
     margin: 10px 0;
-    background-color: #cc0000; /* Vermelho Chapeuzinho */
+    background-color: #810505; /* Vermelho Chapeuzinho */
     color: white;
     border: none;
     border-radius: 4px;
