@@ -100,9 +100,6 @@ app.post('/api/mensagens', async (req, res) => {
                 const query = "SELECT id_cidade, nome_cidade FROM cidade WHERE UPPER(nome_cidade) = UPPER('" + mensagemRecebida + "')";
                 const result = await pool.query(query);
 
-                console.log(result.rows);
-                console.log(result.rows.length);
-
                 if (result.rows.length > 0) {
                     return res.status(200).json({
                         status: "sucesso",
