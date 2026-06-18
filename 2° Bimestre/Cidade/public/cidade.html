@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cidade-Estado</title>
+    <link rel="stylesheet" href="cidade.css">
+</head>
+
+<body>
+    <div class="imagem-topo">
+        <img src="cidade.png" alt="Imagem da cidade">
+    </div>
+    
+    <h1>Pesquisa Cidade e Estado</h1>
+
+    <div class="container">
+        <h3>Relações entre cidades e estados</h3>
+        <p>Digite uma mensagem e clique em "Enviar" para obter resultados:</p>
+
+        <label for="inputMensagem">📨 Sua mensagem:</label>
+        <input type="text" id="inputMensagem" />
+
+        <button onclick="enviarMensagem()">✉️ Enviar mensagem</button>
+
+        <div class="exemplos">
+            <p><strong>💡 Mensagem que o servidor consegue entender:</strong></p>
+            <p>• Digite <span class="codigo">listar</span> → Retorna uma lista com todas as cidades cadastradas</p>
+            <p>• Digite <span class="codigo">o nome da cidade</span> → Retorna o id e o nome da cidade (pode ser que a
+                cidade não estaja na lista)</p>
+            <p>• Digite <span class="codigo">estados</span> → Retorna uma lista com o nome de todas as cidades e seus
+                respectivos estados</p>
+            <p>• Digite qualquer outra coisa → Ela responde "mensagem não entendida"</p>
+        </div>
+
+        <div id="resultadoMensagem" class="resultado">💭 Aguardando sua mensagem...</div>
+    </div>
+
+    <script>
+        // Configuração do servidor (fácil de entender para iniciantes)
+        const enderecoServidor = 'localhost';
+        const porta = '3001';
+
+        // Função para enviar mensagem via POST
+        async function enviarMensagem() {
+            // 1. Pegar o que o usuário digitou
+            const mensagem = document.getElementById('inputMensagem').value.trim();
+
+            // 2. Verificar se não está vazio
+            if (!mensagem) {
+                document.getElementById('resultadoMensagem').innerHTML = '<div class="erro">❌ Não envie bilhetes em branco!</div>';
+                return;
+            }
+
+            // 3. Montar o pacote (JSON) que será enviado
+            const bilheteJSON = {
+                mensagem: mensagem  // O campo "mensagem" é o que o servidor espera
+            };
+
+            try {
+                // 4. Enviar o bilhete para a Servidorina usando POST
+                const resposta = await fetch(`http://${enderecoServidor}:${porta}/api/mensagens`, {
+                    method: 'POST',              // Método POST (enviar dados)
+                    headers: {
+                        'Content-Type': 'application/json',  // Diz que estamos enviando JSON
+                    },
+                    body: JSON.stringify(bilheteJSON)       // Converte o objeto para texto JSON
+                });
+
+                // 5. Converter a resposta da Servidorina para JSON
+                const dados = await resposta.json();
+
+                // 6. Mostrar a resposta na tela
+                if (dados.status === "sucesso") {
+                    // Formata a resposta para mostrar quebras de linha
+                    const mensagemFormatada = dados.mensagem.replace(/\n/g, '<br>');
+                    document.getElementById('resultadoMensagem').innerHTML = `
+                        <div class="sucesso">
+                            <strong>✅ Resposta:</strong><br>
+                            ${mensagemFormatada}
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('resultadoMensagem').innerHTML = `<div class="erro">❌ ${dados.mensagem}</div>`;
+                }
+
+                // 7. Limpar o campo de entrada
+                document.getElementById('inputMensagem').value = '';
+
+            } catch (erro) {
+                // 8. Se algo deu errado na comunicação
+                console.error('Erro:', erro);
+                document.getElementById('resultadoMensagem').innerHTML = '<div class="erro">❌ Erro de conexão com o servidor.</div>';
+            }
+        }
+
+        // Permitir enviar pressionando Enter
+        document.getElementById('inputMensagem').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                enviarMensagem();
+            }
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
