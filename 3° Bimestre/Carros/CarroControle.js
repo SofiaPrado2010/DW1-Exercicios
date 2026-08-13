@@ -95,7 +95,7 @@ function salvar() {
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                carroAlterado = new Carro(id, nome);
+                carroAlterado = new Carro(id, nome, modelo, ano);
                 listaCarro[carro.posicaoNaLista] = carroAlterado;
                 mostrarAviso("Alterado");
                 break;
