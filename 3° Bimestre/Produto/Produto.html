@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Livro</title>
-    <link rel="stylesheet" href="Livro.css">
+    <title>CRUD Produto</title>
+    <link rel="stylesheet" href="Produto.css">
 </head>
 
 <body onload="listar()">
     <!-- Cabeçalho Semântico -->
     <header>
-        <h1>Cadastro de Livro</h1>
-        <p>Gerencie seu catálogo de livros de forma fácil e rápida.</p>
+        <h1>Cadastro de Produto</h1>
+        <p>Gerencie seu catálogo de produtos de forma fácil e rápida.</p>
     </header>
 
     <!-- Conteúdo Principal -->
@@ -21,9 +21,9 @@
         <div class="conteudo-principal">
             <!-- Seção do Formulário -->
             <section class="form-esquerda">
-                <h2>Dados do Livro</h2>
+                <h2>Dados do Produto</h2>
                 
-                <label for="inputId">ID do livro</label>
+                <label for="inputId">ID do produto</label>
                 <div class="linha-id">
                     <input type="text" name="inputId" id="inputId" placeholder="Ex: 1">
                     <input type="button" value="Procure" id="btProcure" onclick="procure()">
@@ -32,17 +32,14 @@
                     <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
                 </div>
 
-                <label for="inputTitulo">Título do livro</label>
-                <input type="text" name="inputTitulo" id="inputTitulo">
+                <label for="inputNome">Nome do Produto</label>
+                <input type="text" name="inputNome" id="inputNome">
 
-                <label for="inputAutor">Autor</label>
-                <input type="text" name="inputAutor" id="inputAutor">
+                <label for="inputTamanho">Tamanho</label>
+                <input type="text" name="inputTamanho" id="inputTamanho">
 
-                <label for="inputGenero">Gênero</label>
-                <input type="text" name="inputGenero" id="inputGenero">
-
-                <label for="inputPaginas">Número de páginas</label>
-                <input type="number" name="inputPaginas" id="inputPaginas">
+                <label for="inputPreco">Preço</label>
+                <input type="number" name="inputPreco" id="inputPreco">
 
                 <div id="divAviso">Informe o ID e clique em Procure</div>
 
@@ -54,18 +51,18 @@
 
             <!-- Aside para o Cartaz (Conteúdo Lateral) -->
             <aside class="form-direita">
-                <h2>Capa do livro</h2>
+                <h2>Imagem do produto</h2>
                 <p class="instrucao-imagem">(Clique na imagem para alterar)</p>
                 <div class="img-container">
-                    <img id="imgCartaz" src="http://localhost:3001/imagens/silhueta.png" alt="Capa do livro" onclick="acionarUpload()">
+                    <img id="imgCartaz" src="http://localhost:3001/imagens/silhueta.png" alt="Imagem do Produto" onclick="acionarUpload()">
                     <input type="file" id="inputImagem" accept="image/*" style="display: none;" onchange="previewImagem()">
                 </div>
             </aside>
         </div>
 
         <!-- Seção da Listagem -->
-        <section class="lista-livros">
-            <h3>Livros Cadastrados</h3>
+        <section class="lista-produtos">
+            <h3>Produtos Cadastrados</h3>
             <div id="outputSaida">Carregando...</div>
         </section>
 
@@ -73,10 +70,10 @@
 
     <!-- Rodapé Semântico -->
     <footer>
-        <p>&copy; 2026 Sistema CRUD Livros. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Sistema CRUD Produtos. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="./LivroControle.js"></script>
+    <script src="./ProdutoControle.js"></script>
 </body>
 
 </html>

@@ -45,52 +45,52 @@ app.use('/imagens', express.static(dirImagens));
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// --- ROTAS DO CRUD DE LIVROS ---
+// --- ROTAS DO CRUD DE PRODUTOS ---
 
-app.get('/livros', async (req, res) => {
+app.get('/produtos', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM public.livro ORDER BY id');
-        res.json({ sucesso: true, livros: result.rows });
+        const result = await pool.query('SELECT * FROM produto ORDER BY id');
+        res.json({ sucesso: true, produtos: result.rows });
     } catch (error) {
         res.status(500).json({ sucesso: false });
     }
 });
 
-app.get('/livro/:id', async (req, res) => {
+app.get('/produto/:id', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM public.livro WHERE id = $1', [req.params.id]);
+        const result = await pool.query('SELECT * FROM produto WHERE id = $1', [req.params.id]);
         if (result.rows.length === 0) return res.status(404).json({ sucesso: false });
-        res.json({ sucesso: true, livro: result.rows[0] });
+        res.json({ sucesso: true, produto: result.rows[0] });
     } catch (error) {
         res.status(500).json({ sucesso: false });
     }
 });
 
-app.post('/livro', async (req, res) => {
+app.post('/produto', async (req, res) => {
     try {
-        const { id, titulo, autor, genero, paginas } = req.body;
-        const query = 'INSERT INTO public.livro (id, titulo, autor, genero, paginas) VALUES ($1, $2, $3, $4, $5)';
-        await pool.query(query, [id, titulo, autor, genero, paginas]);
-        res.json({ sucesso: true, mensagem: 'Livro inserido!' });
+        const { id, nome, tamanho, preco } = req.body;
+        const query = 'INSERT INTO produto (id, nome, tamanho, preco) VALUES ($1, $2, $3, $4)';
+        await pool.query(query, [id, nome, tamanho, preco]);
+        res.json({ sucesso: true, mensagem: 'Produto inserido!' });
     } catch (error) {
         res.status(500).json({ sucesso: false });
     }
 });
 
-app.put('/livro/:id', async (req, res) => {
+app.put('/produto/:id', async (req, res) => {
     try {
-        const { titulo, autor, genero, paginas } = req.body;
-        const query = 'UPDATE public.livro SET titulo = $1, autor = $2, genero = $3, paginas = $4 WHERE id = $5';
-        await pool.query(query, [titulo, autor, genero, paginas, req.params.id]);
+        const { nome, tamanho, preco } = req.body;
+        const query = 'UPDATE produto SET nome = $1, tamanho = $2, preco = $3 WHERE id = $4';
+        await pool.query(query, [nome, tamanho, preco, req.params.id]);
         res.json({ sucesso: true });
     } catch (error) {
         res.status(500).json({ sucesso: false });
     }
 });
 
-app.delete('/livro/:id', async (req, res) => {
+app.delete('/produto/:id', async (req, res) => {
     try {
-        await pool.query('DELETE FROM public.livro WHERE id = $1', [req.params.id]);
+        await pool.query('DELETE FROM produto WHERE id = $1', [req.params.id]);
 
         const imgPath = path.join(__dirname, 'imagens', `${req.params.id}.png`);
         if (fs.existsSync(imgPath)) fs.unlinkSync(imgPath);
