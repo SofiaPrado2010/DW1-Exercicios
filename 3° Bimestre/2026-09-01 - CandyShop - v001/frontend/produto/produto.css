@@ -7,20 +7,20 @@
 
 /* --- Variáveis de Cores --- */
 :root {
-    --cor-primaria: #2c3e50;
-    --cor-secundaria: #3498db;
-    --cor-secundaria-hover: #2980b9;
+    --cor-primaria: #502c42;
+    --cor-secundaria: #db3485;
+    --cor-secundaria-hover: #b92971;
     --cor-fundo: #f8f9fa;
     --cor-texto: #333333;
-    --cor-aviso: #e74c3c;
+    --cor-aviso: #65380c;
     --cor-borda: #ced4da;
-    --cor-branco: #ffffff;
+    --cor-branco: #fff8fc;
 }
 
 /* --- Estrutura Geral --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--cor-fundo);
+    background-image: url(imagem.jpg);
     color: var(--cor-texto);
     display: flex;
     flex-direction: column;
@@ -90,8 +90,7 @@ main.container-master {
     font-size: 0.95rem;
 }
 
-.form-esquerda input[type="text"],
-.form-esquerda input[type="number"] {
+.form-esquerda input[type="text"] {
     width: 100%;
     padding: 0.6rem;
     border: 1px solid var(--cor-borda);
@@ -232,7 +231,7 @@ footer {
     .conteudo-principal {
         flex-direction: column;
     }
-    
+
     .form-direita {
         order: -1;
         margin-bottom: 1.5rem;
@@ -240,6 +239,6 @@ footer {
 
     .linha-id input[type="text"] {
         flex: 1;
-        width: auto; 
+        width: auto;
     }
 }
